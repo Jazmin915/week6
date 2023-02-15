@@ -5,11 +5,31 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>week 6</title>
+    <title>{{ @title }}</title>
 </head>
 <body>
 
-  <h1>Week 6</h1>
+  <h1>{{ @title }}</h1>
+  <p>User logged in as {{ @username }} using password
+     {{ @password }}</p>
+
+  <h2>My Favorite color is {{ @color }}</h2>
+  <h2>My Favorite food is {{ @food }}</h2>
+
+  <p>A circle with a radius of {{ @radius }}
+     has a circumference of {{ round(2 * pi() * @radius, 3) }}</p>
+  <!--the 3 is for the decimal points we are rounding to-->
+
+    <h3>My Favorite Fruits</h3>
+    <!--we are iterating through our loop @fruits then
+    call each element inside that array @fruit
+    then print it in a list-->
+    <ul>
+    <repeat group="{{ @fruits }}" value="{{ @fruit}}">
+        <li>{{ @fruit }}</li>
+    </repeat>
+    </ul>
+
 
 </body>
 </html>
