@@ -25,11 +25,29 @@
     call each element inside that array @fruit
     then print it in a list-->
     <ul>
-    <repeat group="{{ @fruits }}" value="{{ @fruit}}">
+    <repeat group="{{ @fruits }}" value="{{ @fruit }}">
         <li>{{ @fruit }}</li>
     </repeat>
     </ul>
 
+    <h4>Choose a color</h4>
+    <!--group is the array name | values is the placeholder-->
+    <repeat group="{{ @colors }}" value="{{ @color }}">
+        <label><input type="radio" name="color" value="{{ @color }}">{{ ucfirst(@color) }}</label>
+    </repeat>
+
+    <!--Associative array example-->
+    <h4>Cupcakes</h4>
+    <repeat group="{{ @cupcakes}}" key="{{ @key }}" value="{{ @cupcake }}">
+        <label><input type = "checkbox" name="flavors[]" value="{{ @key }}"> {{ @cupcake }}</label>
+    </repeat>
+
+    <!--Using conditions-->
+    <h1>Age</h1>
+    <check if="{{ @age >= 30 }}">
+        <true><p>you are mature</p></true>
+        <false><h1>you are a spring chicken</h1></false>
+    </check>
 
 </body>
 </html>

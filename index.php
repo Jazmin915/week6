@@ -35,8 +35,19 @@ $f3->route('GET /', function($f3) {
         echo $fruit;
     }*/
 
+    //associative array
+    $cupcakes = array("chocolate"=>"Chocolate truffle", "strawberry"=>"Strawberry Shortcake",
+        "maple"=>"Maple Walnut");
+    //putting it into the Fat-Free hive
+    $f3->set('cupcakes', $cupcakes);
+
     //creating an array of colors
     $f3->set('colors', array("red", "blue", "pink"));
+
+    //add a variable that stores your age
+    $f3->set('age', 24);
+    //in the view page, if age is over 30, print "you are mature",
+    //otherwise print "you are a spring chicken"
 
 
 
